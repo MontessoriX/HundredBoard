@@ -37,3 +37,10 @@
 12/10/2016, 12:31:06 PM	--	Deleting what I did in the line above as it was just for debug purposes
 
 ----
+
+12/10/2016, 12:38:51 PM	--	Creating a new Actor Blueprint called NumberPiece
+12/10/2016, 12:40:49 PM	--	Adding a cube component to the NumberPiece Blueprint
+12/10/2016, 12:43:46 PM	--	Scaling the cube so that it is 0.2 high along the Z axis
+12/10/2016, 1:09:19 PM	--	Changing the translation of the cube so that its Z is at 10cm high.  This puts the bottom of the cube on the "floor" of the blueprint
+
+----
