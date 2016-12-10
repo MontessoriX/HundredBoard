@@ -26,3 +26,14 @@
 
 
 ----
+
+12/10/2016, 12:19:30 PM	--	Added a comment in the HundredPlayer Blueprint to describe what we did yesterday
+12/10/2016, 12:20:33 PM	--	Added a boolean variable to HundredPlayer called LMB_Down, this will be true if the left mouse button is down
+12/10/2016, 12:22:01 PM	--	Deleted the nodes for BeginOverlap and Event Tick, since we don't need those now
+12/10/2016, 12:23:42 PM	--	Adde a LeftMouseButton event to the HundredPlayer blueprint
+12/10/2016, 12:24:06 PM	--	Set the pressed node of the LeftMouseButton event to set LMB_Down as true
+12/10/2016, 12:24:50 PM	--	Set the released node of the LeftMouseButton event to set LMB_Down to false
+12/10/2016, 12:30:22 PM	--	Re-Added EventTick event Converted the LMB_Down boolean to a string, and printed it out to the screen.  Just to confirm that everything was printing out correctly.  It is
+12/10/2016, 12:31:06 PM	--	Deleting what I did in the line above as it was just for debug purposes
+
+----
