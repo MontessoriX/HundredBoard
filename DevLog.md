@@ -44,3 +44,10 @@
 12/10/2016, 1:09:19 PM	--	Changing the translation of the cube so that its Z is at 10cm high.  This puts the bottom of the cube on the "floor" of the blueprint
 
 ----
+
+12/11/2016, 12:30:51 PM	1481477451000	Added 2 instances of the NumberPiece to the game board.  These may be a little thick, and I may need to scale the cube in them down a bit in the Z axis
+12/11/2016, 12:33:26 PM	1481477606000	Dragged "Get Player Controller" into the NumberPiece blueprint event graph
+12/11/2016, 1:10:53 PM	1481479853000	Add Get Controlled Pawn and tie it into Get Player Controller.
+12/11/2016, 1:11:35 PM	1481479895000	On the return of Get Controlled Pawn add a Cast To HundredPlayer node.  Additionally tie that into Event BeginPlay
+12/11/2016, 1:12:29 PM	1481477969000	Set a new variable called PlayerControllerReference tied it into the Cast to Hundred Player.  This sets the variable when the game starts so we can use it later
+12/11/2016, 1:14:04 PM	1481478544000	Created a new boolean variable called MouseOver
