@@ -45,9 +45,23 @@
 
 ----
 
-12/11/2016, 12:30:51 PM	1481477451000	Added 2 instances of the NumberPiece to the game board.  These may be a little thick, and I may need to scale the cube in them down a bit in the Z axis
-12/11/2016, 12:33:26 PM	1481477606000	Dragged "Get Player Controller" into the NumberPiece blueprint event graph
-12/11/2016, 1:10:53 PM	1481479853000	Add Get Controlled Pawn and tie it into Get Player Controller.
-12/11/2016, 1:11:35 PM	1481479895000	On the return of Get Controlled Pawn add a Cast To HundredPlayer node.  Additionally tie that into Event BeginPlay
-12/11/2016, 1:12:29 PM	1481477969000	Set a new variable called PlayerControllerReference tied it into the Cast to Hundred Player.  This sets the variable when the game starts so we can use it later
-12/11/2016, 1:14:04 PM	1481478544000	Created a new boolean variable called MouseOver
+12/11/2016, 12:30:51 PM	--	Added 2 instances of the NumberPiece to the game board.  These may be a little thick, and I may need to scale the cube in them down a bit in the Z axis
+12/11/2016, 12:33:26 PM	--	Dragged "Get Player Controller" into the NumberPiece blueprint event graph
+12/11/2016, 1:10:53 PM	--	Add Get Controlled Pawn and tie it into Get Player Controller.
+12/11/2016, 1:11:35 PM	--	On the return of Get Controlled Pawn add a Cast To HundredPlayer node.  Additionally tie that into Event BeginPlay
+12/11/2016, 1:12:29 PM	--	Set a new variable called PlayerControllerReference tied it into the Cast to Hundred Player.  This sets the variable when the game starts so we can use it later
+12/11/2016, 1:14:04 PM	--	Created a new boolean variable called MouseOver
+
+----
+12/12/2016, 6:44:36 PM	--	Added a Boolean variable called MouseOver which will be true when the mouse is over that piece
+12/12/2016, 6:45:48 PM	--	Added a new event to the NumberPiece blueprint: Event ActorBeginCursorOver is triggered when the cursor travels over this actor
+12/12/2016, 6:46:24 PM	--	Set MouseOver to true when the Event ActorBeginCursorOver fires
+12/12/2016, 6:47:40 PM	--	Repeated the above 2 lines, only with Event ActorEndCursorOver setting MouseOver to False when it fires
+12/12/2016, 7:01:12 PM	--
+12/12/2016, 7:01:51 PM	--	Created a new Event called TileAttached in the NumberPiece blueprint
+12/12/2016, 7:02:49 PM	--	Added a branch node connected to the Event Tick Event.  Its condition is the MouseOver Boolean
+12/12/2016, 7:04:43 PM	--	Out of the True node of the branch, I added a second branch.  In theory I could have done an AND node here, but Blueprint doesn't do any short circuiting so both would have to be evaluated when most of the time the first is not true.
+12/12/2016, 7:07:19 PM	--	The condition for this second branch is created by pulling in the Player Controller Reference, and that is connected to the  LMB_Down boolean which feeds the second branch.
+12/12/2016, 7:07:57 PM	--	So what these 2 branches do, is make sure that the mouse is over this blueprint, and that the button is pressed.
+12/12/2016, 7:09:02 PM	--	If both of those are true, throw the TileAttached custom event
+12/12/2016, 7:14:01 PM	--	Added a quick print string to the TileAttached custom event to print out that this event has been thrown.
