@@ -65,3 +65,26 @@
 12/12/2016, 7:07:57 PM	--	So what these 2 branches do, is make sure that the mouse is over this blueprint, and that the button is pressed.
 12/12/2016, 7:09:02 PM	--	If both of those are true, throw the TileAttached custom event
 12/12/2016, 7:14:01 PM	--	Added a quick print string to the TileAttached custom event to print out that this event has been thrown.
+
+----
+
+
+12/13/2016, 7:10:24 PM	--	Spent a bit over an hour trying different methods for trying to capture the mouse location without much success.  I probably should have recorded my efforts here to not duplicate them tomorrow.
+
+----
+
+12/14/2016, 10:53:52 PM	--	Edit -> Project Settings.  Clicked on the collision tab.  Added a new trace channel called Cursor which has a default response of ignore
+
+
+----
+12/15/2016, 5:04:33 PM	--	In the NumberPiece blueprint a new function called Attach_And_Move
+12/15/2016, 5:06:57 PM	--	Adding an input for the Attach_And_Move function.  This is a boolean variable called Attached
+12/15/2016, 5:09:13 PM	--	Off of the Set_Attached function start node, adding a Set Simulate Physics component.  This automatically set the Cube's static mesh as the target
+12/15/2016, 5:24:12 PM	--	Wired up Attached from the node start to the Simulate in point on Set Simulate Physics with a boolean Not node in between.  So that if the piece is attached physics are not simulated.  And if the piece is not attached, physics are simulated
+12/15/2016, 6:19:12 PM	--	Added a branch node after Set Simulate Physics.  The boolean input goes back to the Attached boolean from the start of the Attach_And_Move function.  
+12/15/2016, 6:29:38 PM	--	Back in the Event Graph, we used to have the event tick eventually calling a TileAttached custom event.  I'm deleting that entire custom event an the reference to it
+12/15/2016, 6:30:47 PM	--	Wiring up a call to the new Attach_And_Move function we wrote.  If the second branch statement is true, we know that the mouse is over the piece and the left mouse button is down.  So we want to wire that True to the Attach_And_Move function and set attached to true.
+12/15/2016, 6:31:37 PM	--	We also want to wire BOTH of the false connections from both branches to a call to the Attach_And_Move function where the attached node is false
+12/15/2016, 6:36:53 PM	--	Back in the Attach_And_Move function, adding a Print String to the True branch.  The string is just "Piece is attached" to let us know things are getting there at the appropriate time.
+
+----
