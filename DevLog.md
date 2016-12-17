@@ -88,3 +88,8 @@
 12/15/2016, 6:36:53 PM	--	Back in the Attach_And_Move function, adding a Print String to the True branch.  The string is just "Piece is attached" to let us know things are getting there at the appropriate time.
 
 ----
+
+12/16/2016, 7:37:10 PM	1481935030000	Added a Get Player Controller node to the Attach_And_Move function of the NumberPiece Blueprint
+12/16/2016, 7:37:42 PM	1481935062000	Added a ConvertMouseLocationToWorldSpcae node and wired its target to the return value of Get Player Controller
+12/16/2016, 7:39:09 PM	1481935149000
+--I need to finish documenting this when I get it all working
