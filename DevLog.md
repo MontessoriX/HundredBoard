@@ -100,3 +100,8 @@
 12/17/2016, 6:05:25 PM	1482015925000	Feeling under the weather today, and no brain power for coding, but still want to do something to work on the game.  I started up a new project, this time WITH sample content, and mobile settings, and found some of the samples I wanted to bring over to this project.  I selected the M_Wood_Oak, M_Wood_Pine and M_Wood_Walnut materials right clicked on them and selected Asset Actions -> Migrate
 12/17/2016, 6:06:57 PM	1482016017000	I then selected my HundredBoard game and exported the files there.
 12/17/2016, 6:07:12 PM	1482016032000	Closing that started project, I returned to the HundredBoard game and the materials were in there
+
+
+----
+
+12/18/2016, 9:53:03 PM	1482115983000	In the NumberPiece blueprint, I added the M_Wood_Pine to be the material for the cube.
