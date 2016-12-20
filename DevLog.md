@@ -89,19 +89,28 @@
 
 ----
 
-12/16/2016, 7:37:10 PM	1481935030000	Added a Get Player Controller node to the Attach_And_Move function of the NumberPiece Blueprint
-12/16/2016, 7:37:42 PM	1481935062000	Added a ConvertMouseLocationToWorldSpcae node and wired its target to the return value of Get Player Controller
+12/16/2016, 7:37:10 PM	--	Added a Get Player Controller node to the Attach_And_Move function of the NumberPiece Blueprint
+12/16/2016, 7:37:42 PM	--	Added a ConvertMouseLocationToWorldSpcae node and wired its target to the return value of Get Player Controller
 12/16/2016, 7:39:09 PM	1481935149000
 --I need to finish documenting this when I get it all working
 
 
 ----
 
-12/17/2016, 6:05:25 PM	1482015925000	Feeling under the weather today, and no brain power for coding, but still want to do something to work on the game.  I started up a new project, this time WITH sample content, and mobile settings, and found some of the samples I wanted to bring over to this project.  I selected the M_Wood_Oak, M_Wood_Pine and M_Wood_Walnut materials right clicked on them and selected Asset Actions -> Migrate
-12/17/2016, 6:06:57 PM	1482016017000	I then selected my HundredBoard game and exported the files there.
-12/17/2016, 6:07:12 PM	1482016032000	Closing that started project, I returned to the HundredBoard game and the materials were in there
+12/17/2016, 6:05:25 PM	--	Feeling under the weather today, and no brain power for coding, but still want to do something to work on the game.  I started up a new project, this time WITH sample content, and mobile settings, and found some of the samples I wanted to bring over to this project.  I selected the M_Wood_Oak, M_Wood_Pine and M_Wood_Walnut materials right clicked on them and selected Asset Actions -> Migrate
+12/17/2016, 6:06:57 PM	--	I then selected my HundredBoard game and exported the files there.
+12/17/2016, 6:07:12 PM	--	Closing that started project, I returned to the HundredBoard game and the materials were in there
 
 
 ----
 
-12/18/2016, 9:53:03 PM	1482115983000	In the NumberPiece blueprint, I added the M_Wood_Pine to be the material for the cube.
+12/18/2016, 9:53:03 PM	--	In the NumberPiece blueprint, I added the M_Wood_Pine to be the material for the cube.
+
+
+
+----
+
+12/19/2016, 10:42:04 PM	--	in the NumberPiece blueprint, selected the Cube, and in the Details, under physics properties enabled "Simulate Physics"
+12/19/2016, 11:11:03 PM	--	Back in the level, I added a blocking volume, and set its location to 0,0,-80cm and scale to 5,5,1
+12/19/2016, 11:12:16 PM	--	On this blocking volume, set the collision presets to Custom, Collison Enabled to Query only (No Physics Collision)
+12/19/2016, 11:12:41 PM	--	Set every collision response to ignore, with the exception of Cursor, which is set to Block
