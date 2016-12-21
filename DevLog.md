@@ -114,3 +114,18 @@
 12/19/2016, 11:11:03 PM	--	Back in the level, I added a blocking volume, and set its location to 0,0,-80cm and scale to 5,5,1
 12/19/2016, 11:12:16 PM	--	On this blocking volume, set the collision presets to Custom, Collison Enabled to Query only (No Physics Collision)
 12/19/2016, 11:12:41 PM	--	Set every collision response to ignore, with the exception of Cursor, which is set to Block
+
+
+----
+
+12/20/2016, 10:24:52 PM	1482290692000	Completed the attach_and_move function.  The entire function now works like this:
+12/20/2016, 10:27:21 PM	1482290841000	Returning to the branch node that we used on 12/15/2016, 6:36:53 PM I replaced the true output and connected it to a line trace by channel node.
+12/20/2016, 10:29:54 PM	1482290994000	The start for this LineTraceByChannel is fed by GetPlayer Controler for player index 0, which feeds into the ConvertMouseLocationToWorldSpace and that World Location.  So in short, the Start is the world location of the mouse cursor.
+12/20/2016, 10:32:13 PM	1482291133000	The End of the LineTraceByChannel is the worldDirection from the ConvertMouseLocationToWorldSpace we referenced before vector multiplied by the cursor trace distance, and vector added to the world location.  So in short, the end is the cursor trace distance straight into the screen.
+12/20/2016, 10:32:48 PM	1482291168000	The Trace Channel of the LineTraceByChannel is "Cursor"
+12/20/2016, 10:34:09 PM	1482291249000	The Out Hit of the LineTraceByChannel feeds a Break Hit Result
+12/20/2016, 10:35:11 PM	1482291311000	The execution out of the LineTraceByChannel and the return channel feed a branch.  The True output of which goes to a SetActorLocation node.
+12/20/2016, 10:36:44 PM	1482291404000	The SetActorLocation's new location is fed by the Location from the Break Hit Result and then vector added 0,0,30.0 to.  This moves the item to 30cm high, and moves it to wherever the mouse is.
+
+
+----
