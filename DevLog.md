@@ -118,14 +118,16 @@
 
 ----
 
-12/20/2016, 10:24:52 PM	1482290692000	Completed the attach_and_move function.  The entire function now works like this:
-12/20/2016, 10:27:21 PM	1482290841000	Returning to the branch node that we used on 12/15/2016, 6:36:53 PM I replaced the true output and connected it to a line trace by channel node.
-12/20/2016, 10:29:54 PM	1482290994000	The start for this LineTraceByChannel is fed by GetPlayer Controler for player index 0, which feeds into the ConvertMouseLocationToWorldSpace and that World Location.  So in short, the Start is the world location of the mouse cursor.
-12/20/2016, 10:32:13 PM	1482291133000	The End of the LineTraceByChannel is the worldDirection from the ConvertMouseLocationToWorldSpace we referenced before vector multiplied by the cursor trace distance, and vector added to the world location.  So in short, the end is the cursor trace distance straight into the screen.
-12/20/2016, 10:32:48 PM	1482291168000	The Trace Channel of the LineTraceByChannel is "Cursor"
-12/20/2016, 10:34:09 PM	1482291249000	The Out Hit of the LineTraceByChannel feeds a Break Hit Result
-12/20/2016, 10:35:11 PM	1482291311000	The execution out of the LineTraceByChannel and the return channel feed a branch.  The True output of which goes to a SetActorLocation node.
-12/20/2016, 10:36:44 PM	1482291404000	The SetActorLocation's new location is fed by the Location from the Break Hit Result and then vector added 0,0,30.0 to.  This moves the item to 30cm high, and moves it to wherever the mouse is.
+12/20/2016, 10:24:52 PM	--	Completed the attach_and_move function.  The entire function now works like this:
+12/20/2016, 10:27:21 PM	--	Returning to the branch node that we used on 12/15/2016, 6:36:53 PM I replaced the true output and connected it to a line trace by channel node.
+12/20/2016, 10:29:54 PM	--	The start for this LineTraceByChannel is fed by GetPlayer Controler for player index 0, which feeds into the ConvertMouseLocationToWorldSpace and that World Location.  So in short, the Start is the world location of the mouse cursor.
+12/20/2016, 10:32:13 PM	--	The End of the LineTraceByChannel is the worldDirection from the ConvertMouseLocationToWorldSpace we referenced before vector multiplied by the cursor trace distance, and vector added to the world location.  So in short, the end is the cursor trace distance straight into the screen.
+12/20/2016, 10:32:48 PM	--	The Trace Channel of the LineTraceByChannel is "Cursor"
+12/20/2016, 10:34:09 PM	--	The Out Hit of the LineTraceByChannel feeds a Break Hit Result
+12/20/2016, 10:35:11 PM	--	The execution out of the LineTraceByChannel and the return channel feed a branch.  The True output of which goes to a SetActorLocation node.
+12/20/2016, 10:36:44 PM	--	The SetActorLocation's new location is fed by the Location from the Break Hit Result and then vector added 0,0,30.0 to.  This moves the item to 30cm high, and moves it to wherever the mouse is.
 
 
 ----
+
+12/21/2016, 7:46:22 PM	--	Shrunk the height of the cube in the NumberPiece.  Set it to 0.1 instead of a scale of 0.2
