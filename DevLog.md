@@ -131,3 +131,16 @@
 ----
 
 12/21/2016, 7:46:22 PM	--	Shrunk the height of the cube in the NumberPiece.  Set it to 0.1 instead of a scale of 0.2
+
+
+----
+
+12/22/2016, 10:49:13 PM	--	Clicked on the Floor piece and hit Blueprit/Add Script.  This turned the floor into a Blueprint object which was called HundredBoard
+12/22/2016, 11:17:19 PM	--	Added a new Blueprint called DropTarget
+12/22/2016, 11:17:59 PM	--	Added a box collider to the DropTarget blueprint
+12/22/2016, 11:27:03 PM	--	Set the Box Collider's Box Extent to 10,10,20, and made the location of the Box Collider be 20cm above the base of the SceneRoot so that the collider sticks out the top
+12/22/2016, 11:27:40 PM	--	I turned off the setting for "Hidden in Game" on the Box Collider, so that we can see this in testing.  We will need to turn this back off later.
+12/22/2016, 11:32:19 PM	--	I added one of these DropTarget blueprints to the Level in the upper left hand corner.  Will need to add eventually to the HundredBoard Blueprint
+
+
+----
