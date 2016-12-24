@@ -144,3 +144,7 @@
 
 
 ----
+
+12/23/2016, 10:17:03 PM	1482549423000	To the Drop Target blueprint, added an variable called id.  id is an byte type variable that is editable (for now)
+12/23/2016, 10:20:35 PM	1482549635000	To the NumberPiece blueprint, I added the exact same byte variable called id
+12/23/2016, 10:21:01 PM	1482549661000	In the level, set the id, of one drop target, and one NumberPiece to 1 so that we can test them lining up.
