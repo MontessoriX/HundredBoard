@@ -156,3 +156,25 @@
 
 
 ----
+
+12/25/2016, 7:26:55 PM	--	In the NumberPiece blueprint adding a new function called Get_Drop_ID
+12/25/2016, 7:30:26 PM	--	To the Get_Drop_ID function, adding an Input of object type DropTarget called appropriately enough, DropTarget
+12/25/2016, 7:31:17 PM	--	Added an output to Get_Drop_ID called id, it is of byte
+12/25/2016, 7:34:56 PM	--	Dragged a line off the DropTarget node on Get_Drop_ID and searched for id.  This allowed me to select Get id
+12/25/2016, 7:37:14 PM	--	Connected the id point on the Get id node, to the id node on the return node
+12/25/2016, 7:38:26 PM	--	 (looking at this function now, it is probably overkill to actually be a funciton, but it helped me learn more about them)
+12/25/2016, 7:41:55 PM	--	Back on the main NumberPiece blueprint, adding a variable called TouchingDropTargets.  Made it of type byte, selected the Array option so that it is a byte array, and made it private
+12/25/2016, 7:49:35 PM	--	In NumberPiece blueprint, added a new funciton called Add_Or_Remove_Drop_ID
+12/25/2016, 7:51:18 PM	--	To the Add_Or_Remove_Drop_ID function, adding an Input of object type DropTarget called appropriately enough, DropTarget
+12/25/2016, 7:52:19 PM	--	To the Add_Or_Remove_Drop_ID function adding a boolean variable called Add
+12/25/2016, 7:53:59 PM	--	After the Add_Or_Remove_Drop_ID node, added the Get_Drop_ID function, wiring together the DropTarget pins
+12/25/2016, 7:55:14 PM	--	out of the Get_Drop_ID node, adding a branch node where the condition is the add input variable from the start of the function
+12/25/2016, 8:13:29 PM	--	added a reference to the TouchingDropTargets
+12/25/2016, 8:14:06 PM	--	Dragged out from the TouchingDropTargets an add node, and wired it to the True branch
+12/25/2016, 8:14:36 PM	--	Dragge out fram the TouchingDropTargets and created a remove branch and wired it to the False node
+12/25/2016, 8:15:25 PM	--	For debug purposes, dragged a ForEachLoop node out from TouchingDropTargets.  This was wired to both the add and remove nodes
+12/25/2016, 8:15:56 PM	--	The Loop Body of the ForEachLoop is just a Print String, where ArrayElement is printed
+
+12/25/2016, 8:27:06 PM	--	Back in the NumberPiece Event Graph.  Adding Event ActorBeginOverlap, then using a CastTo DropTarget node.  Finally calling Add_Or_Remove_Drop_ID, where Add is true.
+12/25/2016, 8:27:43 PM	--	Same as above, only Event ActorEndOverlap, and on the Add_Or_Remove_Drop_ID function, add is false
+12/25/2016, 8:30:43 PM	--	Duplicated the existing DropTarget that is on the map, and changed the ID to 2 so that I could test touching different drop targets, and even touching 2 at once
