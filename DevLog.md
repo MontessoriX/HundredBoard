@@ -178,3 +178,16 @@
 12/25/2016, 8:27:06 PM	--	Back in the NumberPiece Event Graph.  Adding Event ActorBeginOverlap, then using a CastTo DropTarget node.  Finally calling Add_Or_Remove_Drop_ID, where Add is true.
 12/25/2016, 8:27:43 PM	--	Same as above, only Event ActorEndOverlap, and on the Add_Or_Remove_Drop_ID function, add is false
 12/25/2016, 8:30:43 PM	--	Duplicated the existing DropTarget that is on the map, and changed the ID to 2 so that I could test touching different drop targets, and even touching 2 at once
+
+
+----
+
+
+12/26/2016, 9:10:12 PM	1482804612000	Created a new boolean variable in the NumberPiece blueprint called OverDropTarget.
+12/26/2016, 9:10:50 PM	1482804650000	Created a new function called Drop_Target_Check
+12/26/2016, 9:14:15 PM	1482804855000	in the function Drop_Target_Check, Added the byte array TouchingDropTargets.
+12/26/2016, 9:14:41 PM	1482804881000	From the node on TouchingDropTargets Dragged out a line and searched for contains, and added a contains node
+12/26/2016, 9:17:53 PM	1482805073000	The contains node needs an input, and since this is a byte, the input also needs to be a byte.  We want to see if the byte variable, id, is in touching drop targets, so it becomes the second input to contains.
+12/26/2016, 9:20:48 PM	1482805248000	contains produces a boolean output, if the item is found in the array.  That boolean output feeds a set OverDropTarget node, setting the variable to true or false depending on if the byte was found or not.
+12/26/2016, 9:25:08 PM	1482805508000	In the Add_Or_Remove_Drop_ID function, I deleted the ForEachLoop, and replaced it with the Drop_Target_Check function.  It is fed by both the executors from add and remove nodes.
+12/26/2016, 9:26:06 PM	1482805566000	The out point on the Drop_Target_Check node still feeds the print string node, but the string that gets printed is the OverDropTarget boolean converted to a string.
